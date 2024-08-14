@@ -120,7 +120,7 @@ const AppContainer = styled.div`
 `;
 
 const Heading = styled.div`
-width: 100%;
+  width: 100%;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -130,12 +130,24 @@ width: 100%;
   padding-bottom: 20px;
   text-align: center;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    font-size: 30px; /* Adjust font size for smaller screens */
+    height: 200px; /* Reduce height on smaller screens */
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
 `;
 
 const TableContainer = styled.div`
   width: 70%;
-  overflow-x: hidden;
+  overflow-x: auto; /* Enable horizontal scroll on smaller screens */
   padding-left: 50px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+
+  @media (max-width: 768px) {
+    width: 100%; /* Full width on smaller screens */
+    padding-left: 0; /* Remove extra padding on smaller screens */
+  }
 `;
 
 const StyledTable = styled.table`
@@ -144,6 +156,10 @@ const StyledTable = styled.table`
   border-radius: 20px;
   background-color: #1e1e30;
   min-width: 600px; /* Ensures the table doesn't shrink too much */
+
+  @media (max-width: 768px) {
+    min-width: 100%; /* Ensure the table takes up full width on smaller screens */
+  }
 `;
 
 const StyledTh = styled.th`
@@ -154,7 +170,6 @@ const StyledTh = styled.th`
 
 const StyledTd = styled.td`
   border: none;
-  /* padding: 10px; */
 
   &:first-child {
     color: white;

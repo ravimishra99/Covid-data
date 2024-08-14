@@ -12,60 +12,58 @@ const Navigation = () => {
                 <StyledButton> <StyledLink to="about">About</StyledLink> </StyledButton>
                 <StyledButton> <StyledLink to="vaccination">Vaccination</StyledLink></StyledButton>
             </ButtonContainer>
-
         </NavContainer>
-
     )
 }
 
 export default Navigation;
 
 const NavContainer = styled.div`
-width: 100%;
-height:50px;
-background-color: #1e1e30;
-display: flex;
-flex-direction: row;
-justify-content:space-around;
-align-items: center;
-padding:0 20px;
-margin: 0 ;
-box-sizing: border-box;
-overflow-x: hidden;
-/* position: relative; */
+  width: 100%;
+  height: 70px;
+  background-color: #1e1e30;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Align it to the top */
+  left: 0;
+  z-index: 1000; /* Ensure it is on top of other elements */
 `;
 
 const Title = styled.div`
-font-size:24px;
-color: white;
-line-height: 50px;
-
+  font-size: 24px;
+  color: white;
+  line-height: 50px;
 `;
 
 const ButtonContainer = styled.div`
-display: flex;
-gap: 10px;
+  display: flex;
+  gap: 10px;
 `;
 
-const StyledButton=styled.button`
-border: none;
-background: none;
-color: white;
-font-size: 20px;
-cursor: pointer;
-transition:color 0.3s ease;
-height: 50px;
-display: flex;
-align-items: center;
+const StyledButton = styled.button`
+  border: none;
+  background: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  height: 50px;
+  display: flex;
+  align-items: center;
 `;
 
-const StyledLink=styled(Link)`
-text-decoration: none;
-color:inherit;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 
-&:hover{
+  &:hover {
     text-decoration: underline;
-}
+  }
 `;
-
-

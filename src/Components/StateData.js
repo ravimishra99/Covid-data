@@ -91,15 +91,16 @@ export default StateData;
 // Styled components (same as before)
 const Container = styled.div`
   width: 100%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 20px;
   background-color: #161625;
   box-sizing: border-box;
   overflow-x: hidden;
-  position: relative;
+ 
 `;
 
 const Heading = styled.h1`
