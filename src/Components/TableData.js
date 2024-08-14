@@ -130,7 +130,7 @@ const TableContainer = styled.div`
   padding-left: 25px;
   box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     width: 100%;
     padding-left: 0; /* Remove extra padding on smaller screens */
   }
