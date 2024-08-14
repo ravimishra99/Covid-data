@@ -50,16 +50,15 @@ function TableData() {
         const response = await fetch('https://data.covid19india.org/v4/min/data.min.json');
         const data = await response.json();
 
-        // Convert the data into an array of objects with state names and relevant details
         const formattedData = Object.entries(data).map(([stateCode, details]) => {
           const { total, meta } = details;
           const confirmed = total?.confirmed || 0;
           const recovered = total?.recovered || 0;
           const deceased = total?.deceased || 0;
-          const active = confirmed - (recovered + deceased); // Calculate active cases
+          const active = confirmed - (recovered + deceased);
 
           return {
-            stateName: stateCodeToName[stateCode], // Map state code to state name
+            stateName: stateCodeToName[stateCode],
             confirmed,
             recovered,
             deceased,
@@ -79,30 +78,32 @@ function TableData() {
 
   return (
     <AppContainer>
-      <StyledTable border="1" cellPadding="20">
-        <thead>
-          <tr>
-            <StyledTh>State Name</StyledTh>
-            <StyledTh>Confirmed</StyledTh>
-            <StyledTh>Active</StyledTh>
-            <StyledTh>Recovered</StyledTh>
-            <StyledTh>Deceased</StyledTh>
-            <StyledTh>Population</StyledTh>
-          </tr>
-        </thead>
-        <tbody>
-          {stateData.map((state) => (
-            <tr key={state.stateName}>
-              <StyledTd>{state.stateName}</StyledTd>
-              <StyledTd>{state.confirmed}</StyledTd>
-              <StyledTd>{state.active}</StyledTd>
-              <StyledTd>{state.recovered}</StyledTd>
-              <StyledTd>{state.deceased}</StyledTd>
-              <StyledTd>{state.population}</StyledTd>
+      <TableContainer>
+        <StyledTable border="1" cellPadding="20">
+          <thead>
+            <tr>
+              <StyledTh>State Name</StyledTh>
+              <StyledTh>Confirmed</StyledTh>
+              <StyledTh>Active</StyledTh>
+              <StyledTh>Recovered</StyledTh>
+              <StyledTh>Deceased</StyledTh>
+              <StyledTh>Population</StyledTh>
             </tr>
-          ))}
-        </tbody>
-      </StyledTable>
+          </thead>
+          <tbody>
+            {stateData.map((state) => (
+              <tr key={state.stateName}>
+                <StyledTd>{state.stateName}</StyledTd>
+                <StyledTd>{state.confirmed}</StyledTd>
+                <StyledTd>{state.active}</StyledTd>
+                <StyledTd>{state.recovered}</StyledTd>
+                <StyledTd>{state.deceased}</StyledTd>
+                <StyledTd>{state.population}</StyledTd>
+              </tr>
+            ))}
+          </tbody>
+        </StyledTable>
+      </TableContainer>
     </AppContainer>
   );
 }
@@ -121,82 +122,55 @@ const AppContainer = styled.div`
   overflow-x: hidden;
 `;
 
+const TableContainer = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin: auto;
+`;
+
 const StyledTable = styled.table`
-  width: 80%;
+  width: 100%;
   border: 2px solid white;
   border-radius: 5px;
-  margin: auto;
   background-color: #1e1e30;
-  table-layout: fixed;
-  
-  @media (max-width:750px){
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.8rem;
-  }
-
+  min-width: 600px; /* Ensures the table doesn't shrink too much */
 `;
 
 const StyledTh = styled.th`
   color: white;
   border: none;
   text-align: start;
-  word-wrap: break-word;
-
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 6px;
-  }
 `;
 
 const StyledTd = styled.td`
   border: none;
-
-
+  padding: 10px;
 
   &:first-child {
     color: white;
-    padding-top: 20px;
   }
 
   &:nth-child(2) {
     color: blue;
-    padding-top: 20px;
   }
 
   &:nth-child(3) {
     color: green;
-    text-decoration: none;
-    padding-top: 20px;
   }
 
   &:nth-child(4) {
     color: red;
-    padding-top: 20px;
   }
 
   &:nth-child(5) {
     color: yellow;
-    text-decoration: none;
-    padding-top: 20px;
   }
 
   &:nth-child(6) {
     color: lightgreen;
-    text-decoration: none;
-    padding-top: 20px;
   }
 
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 6px;
+  &:nth-child(7) {
+    color: orange;
   }
 `;
