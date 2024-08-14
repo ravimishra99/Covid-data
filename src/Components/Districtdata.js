@@ -140,7 +140,7 @@ const Heading = styled.div`
 
 const TableContainer = styled.div`
   width: 70%;
-  overflow-x: auto; /* Enable horizontal scroll on smaller screens */
+  overflow-x: hidden; /* Enable horizontal scroll on smaller screens */
   padding-left: 50px;
   box-sizing: border-box; /* Ensure padding is included in width calculation */
 
