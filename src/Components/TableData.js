@@ -129,9 +129,11 @@ const TableContainer = styled.div`
   padding-top: 10px;
   padding-left: 25px;
   box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-  @media (max-width: 768px) {
-    width:95%; /* Ensure the table has a minimum width on smaller screens */
-  }
+  @media (min-width: 300px) and (max-width: 850px) {
+    /* Your styles here */
+    width: 95%;
+} /* Ensure the table has a minimum width on smaller screens */
+  
 `;
 
 const StyledTable = styled.table`
@@ -142,7 +144,7 @@ const StyledTable = styled.table`
   min-width: 600px; /* Prevent the table from shrinking too much */
   overflow-x: auto;
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     min-width: 600px; /* Ensure the table has a minimum width on smaller screens */
   }
 `;

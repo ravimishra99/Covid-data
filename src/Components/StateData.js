@@ -100,9 +100,9 @@ const Container = styled.div`
   box-sizing: border-box;
   overflow-x: hidden;
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     padding: 120px 15px 15px; /* Adjust padding for mobile screens */
-    min-height: auto; /* Adjust height for mobile screens */
+    min-height: 400px; /* Adjust height for mobile screens */
   }
 `;
 
@@ -112,7 +112,7 @@ const Heading = styled.h1`
   margin-bottom: 20px;
   color: white;
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     font-size: 1.5rem; /* Adjust font size for mobile screens */
     margin-bottom: 15px; /* Adjust margin for mobile screens */
   }
@@ -123,7 +123,7 @@ const SearchContainer = styled.div`
   text-align: center;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     margin: 15px auto; /* Adjust margin for mobile screens */
   }
 `;
@@ -144,7 +144,7 @@ const SearchInput = styled.input.attrs({ type: 'text', autoComplete: 'off' })`
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     width: 50%; /* Increase input width for mobile screens */
   }
 `;
@@ -161,7 +161,7 @@ const SuggestionsList = styled.ul`
   background-color: #1e1e30;
   text-align: start;
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     width: 50%; /* Increase suggestions list width for mobile screens */
   }
 `;

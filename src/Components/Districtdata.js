@@ -67,7 +67,7 @@ function DistrictData() {
 
   return (
     <AppContainer>
-      <Heading>District-wise Data for {stateName}</Heading>
+      <Heading>District-wise Data for <HighlightedSpan>{stateName}</HighlightedSpan></Heading>
       <TableContainer>
         <StyledTable border="1" cellPadding="20">
           <thead>
@@ -110,8 +110,8 @@ export default DistrictData;
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
- 
+  /* justify-content: center; */
+ align-items: center;
   min-height: 100vh;
   width: 100%;
   background-color: #161625;
@@ -120,33 +120,39 @@ const AppContainer = styled.div`
 `;
 
 const Heading = styled.div`
-  width: 100%;
-  height: 300px;
+  width: 70%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 50px;
-  padding-bottom: 20px;
-  text-align: center;
-  padding: 0 20px;
+  font-size: 30px;
+  /* text-align: center; */
+  margin-top: 70px; /* Adjust this value based on the height of your navbar */
 
-  @media (max-width: 768px) {
-    font-size: 30px; /* Adjust font size for smaller screens */
-    height: 200px; /* Reduce height on smaller screens */
-    padding: 0 10px; /* Adjust padding for smaller screens */
+  @media (min-width: 300px) and (max-width: 850px) {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    height: 200px;
+    word-break: break-all; /* Reduce height on smaller screens */
+    margin-top: 60px; /* Adjust margin-top for smaller screens */
   }
 `;
+
+const HighlightedSpan = styled.span`
+  color: blue;
+  margin-left: 10px; /* Adjust space as needed */
+`;
+
 
 const TableContainer = styled.div`
   width: 70%;
   overflow-x: hidden; /* Enable horizontal scroll on smaller screens */
-  padding-left: 50px;
+  /* padding-left: 50px; */
   box-sizing: border-box; /* Ensure padding is included in width calculation */
 
-  @media (max-width: 768px) {
-    width: 80%; /* Full width on smaller screens */
-    /* padding-left: 0; Remove extra padding on smaller screens */
+  @media (min-width: 300px) and (max-width: 850px) {
+    width:90%;
+   overflow-x: auto;
   }
 `;
 
@@ -157,7 +163,7 @@ const StyledTable = styled.table`
   background-color: #1e1e30;
   min-width: 600px; /* Ensures the table doesn't shrink too much */
 
-  @media (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 850px) {
     min-width: 80%; /* Ensure the table takes up full width on smaller screens */
   }
 `;
