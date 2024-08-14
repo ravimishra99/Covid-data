@@ -132,7 +132,7 @@ const TableContainer = styled.div`
 
   @media (max-width: 1000px) {
     width: 90%;
-    padding-left: 0; /* Remove extra padding on smaller screens */
+    /* padding-left: 0; Remove extra padding on smaller screens */
   }
 `;
 

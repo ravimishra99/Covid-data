@@ -88,19 +88,22 @@ function StateData() {
 
 export default StateData;
 
-// Styled components (same as before)
+// Styled components
 const Container = styled.div`
   width: 100%;
-  height: 300px;
+  min-height: 300px; /* Ensure the container has a minimum height */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin: 0 auto; */
-  padding: 20px;
+  padding: 100px 20px 20px; /* Add top padding to avoid overlap with the fixed navbar */
   background-color: #161625;
   box-sizing: border-box;
   overflow-x: hidden;
- 
+
+  @media (max-width: 768px) {
+    padding: 120px 15px 15px; /* Adjust padding for mobile screens */
+    min-height: auto; /* Adjust height for mobile screens */
+  }
 `;
 
 const Heading = styled.h1`
@@ -108,12 +111,21 @@ const Heading = styled.h1`
   text-align: center;
   margin-bottom: 20px;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; /* Adjust font size for mobile screens */
+    margin-bottom: 15px; /* Adjust margin for mobile screens */
+  }
 `;
 
 const SearchContainer = styled.div`
   margin: 20px auto;
   text-align: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin: 15px auto; /* Adjust margin for mobile screens */
+  }
 `;
 
 const SearchInput = styled.input.attrs({ type: 'text', autoComplete: 'off' })`
@@ -131,6 +143,10 @@ const SearchInput = styled.input.attrs({ type: 'text', autoComplete: 'off' })`
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
+
+  @media (max-width: 768px) {
+    width: 50%; /* Increase input width for mobile screens */
+  }
 `;
 
 const SuggestionsList = styled.ul`
@@ -144,6 +160,10 @@ const SuggestionsList = styled.ul`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #1e1e30;
   text-align: start;
+
+  @media (max-width: 768px) {
+    width: 50%; /* Increase suggestions list width for mobile screens */
+  }
 `;
 
 const SuggestionItem = styled.li`
