@@ -144,7 +144,7 @@ const TableContainer = styled.div`
   padding-left: 50px;
   box-sizing: border-box; /* Ensure padding is included in width calculation */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100%; /* Full width on smaller screens */
     padding-left: 0; /* Remove extra padding on smaller screens */
   }
@@ -155,9 +155,9 @@ const StyledTable = styled.table`
   border: 2px solid white;
   border-radius: 20px;
   background-color: #1e1e30;
-  min-width: 600px; /* Ensures the table doesn't shrink too much */
+  min-width: 900px; /* Ensures the table doesn't shrink too much */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     min-width: 100%; /* Ensure the table takes up full width on smaller screens */
   }
 `;
