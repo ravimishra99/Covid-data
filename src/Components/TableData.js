@@ -127,46 +127,76 @@ const StyledTable = styled.table`
   border-radius: 5px;
   margin: auto;
   background-color: #1e1e30;
+  table-layout: fixed;
+  
+  @media (max-width:750px){
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+
 `;
 
 const StyledTh = styled.th`
   color: white;
   border: none;
   text-align: start;
+  word-wrap: break-word;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px;
+  }
 `;
 
 const StyledTd = styled.td`
   border: none;
 
+
+
   &:first-child {
     color: white;
+    padding-top: 20px;
   }
 
   &:nth-child(2) {
     color: blue;
+    padding-top: 20px;
   }
 
   &:nth-child(3) {
     color: green;
     text-decoration: none;
+    padding-top: 20px;
   }
 
   &:nth-child(4) {
     color: red;
+    padding-top: 20px;
   }
 
   &:nth-child(5) {
     color: yellow;
     text-decoration: none;
+    padding-top: 20px;
   }
 
   &:nth-child(6) {
     color: lightgreen;
     text-decoration: none;
+    padding-top: 20px;
   }
 
-  &:nth-child(7) {
-    color: orange;
-    text-decoration: none;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px;
   }
 `;
