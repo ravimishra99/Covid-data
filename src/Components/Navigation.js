@@ -28,14 +28,17 @@ display: flex;
 flex-direction: row;
 justify-content:space-around;
 align-items: center;
-padding: 10px;
-margin: 0 auto;
+padding:0 20px;
+margin: 0 ;
+box-sizing: border-box;
 overflow-x: hidden;
+/* position: relative; */
 `;
 
 const Title = styled.div`
 font-size:24px;
 color: white;
+line-height: 50px;
 
 `;
 
@@ -51,6 +54,9 @@ color: white;
 font-size: 20px;
 cursor: pointer;
 transition:color 0.3s ease;
+height: 50px;
+display: flex;
+align-items: center;
 `;
 
 const StyledLink=styled(Link)`

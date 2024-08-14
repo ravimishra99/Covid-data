@@ -42,63 +42,65 @@ const stateNameToCode = {
 };
 
 function DistrictData() {
-    const { stateName } = useParams();
-    const [districtData, setDistrictData] = useState(null);
+  const { stateName } = useParams();
+  const [districtData, setDistrictData] = useState(null);
 
-    useEffect(() => {
-        const fetchDistrictData = async () => {
-            try {
-                const response = await fetch('https://data.covid19india.org/v4/min/data.min.json');
-                const jsonData = await response.json();
+  useEffect(() => {
+    const fetchDistrictData = async () => {
+      try {
+        const response = await fetch('https://data.covid19india.org/v4/min/data.min.json');
+        const jsonData = await response.json();
 
-                const stateCode = stateNameToCode[stateName];
-                if (jsonData && stateCode && jsonData[stateCode]) {
-                    setDistrictData(jsonData[stateCode]?.districts || {});
-                } else {
-                    setDistrictData(null);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+        const stateCode = stateNameToCode[stateName];
+        if (jsonData && stateCode && jsonData[stateCode]) {
+          setDistrictData(jsonData[stateCode]?.districts || {});
+        } else {
+          setDistrictData(null);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-        fetchDistrictData();
-    }, [stateName]);
+    fetchDistrictData();
+  }, [stateName]);
 
-    return (
-        <AppContainer>
-            <Heading>District-wise Data for {stateName}</Heading>
-            <StyledTable border="1" cellPadding="20">
-                <thead>
-                    <tr>
-                        <StyledTh>District</StyledTh>
-                        <StyledTh>Confirmed</StyledTh>
-                        <StyledTh>Recovered</StyledTh>
-                        <StyledTh>Deceased</StyledTh>
-                    </tr>
-                </thead>
-                <tbody>
-                    {districtData ? (
-                        Object.keys(districtData).map((district) => {
-                            const districtInfo = districtData[district]?.total || {};
-                            return (
-                                <tr key={district}>
-                                    <StyledTd>{district}</StyledTd>
-                                    <StyledTd>{districtInfo.confirmed || 'N/A'}</StyledTd>
-                                    <StyledTd>{districtInfo.recovered || 'N/A'}</StyledTd>
-                                    <StyledTd>{districtInfo.deceased || 'N/A'}</StyledTd>
-                                </tr>
-                            );
-                        })
-                    ) : (
-                        <tr>
-                            <StyledTd colSpan="4">No data available for {stateName}</StyledTd>
-                        </tr>
-                    )}
-                </tbody>
-            </StyledTable>
-        </AppContainer>
-    );
+  return (
+    <AppContainer>
+      <Heading>District-wise Data for {stateName}</Heading>
+      <TableContainer>
+        <StyledTable border="1" cellPadding="20">
+          <thead>
+            <tr>
+              <StyledTh>District</StyledTh>
+              <StyledTh>Confirmed</StyledTh>
+              <StyledTh>Recovered</StyledTh>
+              <StyledTh>Deceased</StyledTh>
+            </tr>
+          </thead>
+          <tbody>
+            {districtData ? (
+              Object.keys(districtData).map((district) => {
+                const districtInfo = districtData[district]?.total || {};
+                return (
+                  <tr key={district}>
+                    <StyledTd>{district}</StyledTd>
+                    <StyledTd>{districtInfo.confirmed || 'N/A'}</StyledTd>
+                    <StyledTd>{districtInfo.recovered || 'N/A'}</StyledTd>
+                    <StyledTd>{districtInfo.deceased || 'N/A'}</StyledTd>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <StyledTd colSpan="4">No data available for {stateName}</StyledTd>
+              </tr>
+            )}
+          </tbody>
+        </StyledTable>
+      </TableContainer>
+    </AppContainer>
+  );
 }
 
 export default DistrictData;
@@ -110,29 +112,38 @@ const AppContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:auto;
-  width: 100vw;
+  height: auto;
+  width: 100%;
   background-color: #161625;
+  box-sizing: border-box;
   overflow-x: hidden;
 `;
 
-const Heading=styled.div`
-height:300px;
-display: flex;
-justify-content: center;
-align-items: center;
-color:white;
-font-size:50px;
-padding-bottom:20px;
+const Heading = styled.div`
+width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+  padding: 0 20px;
+`;
+
+const TableContainer = styled.div`
+  width: 70%;
+  overflow-x: hidden;
+  padding-left: 50px;
 `;
 
 const StyledTable = styled.table`
-width: 70%;
-
+  width: 90%;
   border: 2px solid white;
-  border-radius: 5px;
-  margin: auto;
+  border-radius: 20px;
   background-color: #1e1e30;
+  min-width: 600px; /* Ensures the table doesn't shrink too much */
 `;
 
 const StyledTh = styled.th`
@@ -143,6 +154,7 @@ const StyledTh = styled.th`
 
 const StyledTd = styled.td`
   border: none;
+  /* padding: 10px; */
 
   &:first-child {
     color: white;
@@ -154,7 +166,6 @@ const StyledTd = styled.td`
 
   &:nth-child(3) {
     color: green;
-    text-decoration: none;
   }
 
   &:nth-child(4) {

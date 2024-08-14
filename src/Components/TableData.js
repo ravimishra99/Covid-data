@@ -117,23 +117,32 @@ const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: auto;
-  width: 100vw;
+  width: 100%;
   background-color: #161625;
   overflow-x: hidden;
+  position: relative;
 `;
 
 const TableContainer = styled.div`
-  width: 100%;
-  overflow-x: auto;
+  width: 70%;
+  overflow-x: hidden;
   margin: auto;
+  padding-left: 50px;
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow-x: auto;
+  }
 `;
 
 const StyledTable = styled.table`
-  width: 100%;
+  width: 90%;
   border: 2px solid white;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #1e1e30;
-  min-width: 600px; /* Ensures the table doesn't shrink too much */
+  min-width: 600px; 
+  @media (max-width: 768px) {
+    min-width: 100%; 
+  }
 `;
 
 const StyledTh = styled.th`
@@ -144,7 +153,7 @@ const StyledTh = styled.th`
 
 const StyledTd = styled.td`
   border: none;
-  padding: 10px;
+  /* padding: 10px; */
 
   &:first-child {
     color: white;

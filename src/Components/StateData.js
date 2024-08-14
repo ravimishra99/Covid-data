@@ -99,6 +99,7 @@ const Container = styled.div`
   background-color: #161625;
   box-sizing: border-box;
   overflow-x: hidden;
+  position: relative;
 `;
 
 const Heading = styled.h1`
@@ -141,6 +142,7 @@ const SuggestionsList = styled.ul`
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #1e1e30;
+  text-align: start;
 `;
 
 const SuggestionItem = styled.li`
