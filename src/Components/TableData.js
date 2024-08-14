@@ -123,16 +123,14 @@ const AppContainer = styled.div`
 `;
 
 const TableContainer = styled.div`
-  width: 70%;
-  overflow-x: auto; /* Enable horizontal scroll */
+  width: 70%; /* Use full width for the table container */
+  overflow-x: auto; /* Enable horizontal scroll only for the table */
   margin: auto;
   padding-top: 10px;
   padding-left: 25px;
   box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-
   @media (max-width: 768px) {
-    width: 90%;
-    /* padding-left: 0; Remove extra padding on smaller screens */
+    width:95%; /* Ensure the table has a minimum width on smaller screens */
   }
 `;
 
@@ -142,9 +140,10 @@ const StyledTable = styled.table`
   border-radius: 20px;
   background-color: #1e1e30;
   min-width: 600px; /* Prevent the table from shrinking too much */
+  overflow-x: auto;
 
   @media (max-width: 768px) {
-    min-width: 100%; /* Ensure the table takes up full width on smaller screens */
+    min-width: 600px; /* Ensure the table has a minimum width on smaller screens */
   }
 `;
 

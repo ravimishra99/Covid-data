@@ -111,7 +111,7 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+ 
   min-height: 100vh;
   width: 100%;
   background-color: #161625;
@@ -144,21 +144,21 @@ const TableContainer = styled.div`
   padding-left: 50px;
   box-sizing: border-box; /* Ensure padding is included in width calculation */
 
-  @media (max-width: 1000px) {
-    width: 100%; /* Full width on smaller screens */
-    padding-left: 0; /* Remove extra padding on smaller screens */
+  @media (max-width: 768px) {
+    width: 80%; /* Full width on smaller screens */
+    /* padding-left: 0; Remove extra padding on smaller screens */
   }
 `;
 
 const StyledTable = styled.table`
-  width: 90%;
+  width: 80%;
   border: 2px solid white;
   border-radius: 20px;
   background-color: #1e1e30;
-  min-width: 900px; /* Ensures the table doesn't shrink too much */
+  min-width: 600px; /* Ensures the table doesn't shrink too much */
 
-  @media (max-width: 1000px) {
-    min-width: 100%; /* Ensure the table takes up full width on smaller screens */
+  @media (max-width: 768px) {
+    min-width: 80%; /* Ensure the table takes up full width on smaller screens */
   }
 `;
 
