@@ -109,68 +109,68 @@ function DistrictData() {
 export default DistrictData;
 
 // Styled components
-
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
- align-items: center;
+  align-items: center;
   min-height: 100vh;
   width: 100%;
   background-color: #161625;
-  box-sizing: border-box;
+  
   overflow-x: hidden;
 `;
 
 const Heading = styled.div`
-  width: 70%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  text-align: center;
   color: white;
   font-size: 30px;
-  
-  margin-top: 70px; 
+  margin-top: 80px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 
   @media (min-width: 300px) and (max-width: 850px) {
-    font-size: 20px; 
-    height: 200px;
-    word-break: break-all; 
-    margin-top: 60px; 
+    font-size: 20px;
+    margin-top: 140px; 
   }
 `;
 
 const HighlightedSpan = styled.span`
   color: blue;
-  margin-left: 10px; 
+  margin-top: 10px;
+
+  @media (min-width: 300px) and (max-width: 850px) {
+    margin-top: 5px;
+  }
 `;
 
-
 const TableContainer = styled.div`
-  width: 90%;
-  padding-left: 180px;
+   width: 90%; 
   overflow-x: hidden; 
+  margin: 0 auto;
+  padding-top: 10px;
+  
   box-sizing: border-box; 
-
   @media (min-width: 300px) and (max-width: 950px) {
- 
-    padding-left: 20px;
-   overflow-x: auto;
+   
+    overflow-x: auto;
+    width: 95%;
   }
 `;
 
 const StyledTable = styled.table`
-  width: 80%;
+ width: 100%;
   border: 2px solid white;
   border-radius: 20px;
   background-color: #1e1e30;
-  box-sizing: border-box;
-  margin: 0;
   min-width: 600px; 
 
-  @media (min-width: 300px) and (max-width: 850px) {
-    min-width: 80%; 
+
+  @media (min-width: 300px) and (max-width: 950px) {
+    min-width: 600px; 
   }
 `;
 

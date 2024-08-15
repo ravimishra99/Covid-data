@@ -124,6 +124,7 @@ const AppContainer = styled.div`
   width: 100%;
   background-color: #161625;
   overflow-x: hidden;
+  
   margin: 0;
   padding:0;
 `;

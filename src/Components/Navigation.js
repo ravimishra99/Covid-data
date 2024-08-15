@@ -38,8 +38,10 @@ const NavContainer = styled.div`
     flex-direction: column; 
     height: auto; 
     padding: 10px 20px;
+    margin-bottom: 10px; 
   }
 `;
+
 
 const Title = styled.div`
   font-size: 24px;
