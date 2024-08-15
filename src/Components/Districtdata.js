@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Footerbar from './Footerbar';
+
 
 const stateNameToCode = {
   'Andhra Pradesh': 'AP',
@@ -99,6 +101,7 @@ function DistrictData() {
           </tbody>
         </StyledTable>
       </TableContainer>
+     <Footerbar />
     </AppContainer>
   );
 }
@@ -127,31 +130,32 @@ const Heading = styled.div`
   align-items: center;
   color: white;
   font-size: 30px;
-  /* text-align: center; */
-  margin-top: 70px; /* Adjust this value based on the height of your navbar */
+  
+  margin-top: 70px; 
 
   @media (min-width: 300px) and (max-width: 850px) {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px; 
     height: 200px;
-    word-break: break-all; /* Reduce height on smaller screens */
-    margin-top: 60px; /* Adjust margin-top for smaller screens */
+    word-break: break-all; 
+    margin-top: 60px; 
   }
 `;
 
 const HighlightedSpan = styled.span`
   color: blue;
-  margin-left: 10px; /* Adjust space as needed */
+  margin-left: 10px; 
 `;
 
 
 const TableContainer = styled.div`
-  width: 70%;
-  overflow-x: hidden; /* Enable horizontal scroll on smaller screens */
-  /* padding-left: 50px; */
-  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  width: 90%;
+  padding-left: 180px;
+  overflow-x: hidden; 
+  box-sizing: border-box; 
 
-  @media (min-width: 300px) and (max-width: 850px) {
-    width:90%;
+  @media (min-width: 300px) and (max-width: 950px) {
+ 
+    padding-left: 20px;
    overflow-x: auto;
   }
 `;
@@ -161,10 +165,12 @@ const StyledTable = styled.table`
   border: 2px solid white;
   border-radius: 20px;
   background-color: #1e1e30;
-  min-width: 600px; /* Ensures the table doesn't shrink too much */
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 600px; 
 
   @media (min-width: 300px) and (max-width: 850px) {
-    min-width: 80%; /* Ensure the table takes up full width on smaller screens */
+    min-width: 80%; 
   }
 `;
 

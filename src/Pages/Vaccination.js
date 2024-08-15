@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+
+
 
 const Vaccination = () => {
   return (
-    <div>Vaccination</div>
-  )
+    <div>
+      <h1>Vaccination Information</h1>
+      <p>Here you can find all the information about vaccinations...</p>
+  
+    
+    </div>
+  );
 }
 
-export default Vaccination
+export default Vaccination;

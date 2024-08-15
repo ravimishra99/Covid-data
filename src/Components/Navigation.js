@@ -29,14 +29,14 @@ const NavContainer = styled.div`
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Align it to the top */
+  position: fixed; 
+  top: 0; 
   left: 0;
-  z-index: 1000; /* Ensure it is on top of other elements */
+  z-index: 1000; 
 
   @media (min-width: 300px) and (max-width: 850px) {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    height: auto; /* Adjust height to fit content */
+    flex-direction: column; 
+    height: auto; 
     padding: 10px 20px;
   }
 `;
@@ -47,7 +47,7 @@ const Title = styled.div`
   line-height: 50px;
 
   @media (min-width: 300px) and (max-width: 850px) {
-    margin-bottom: 10px; /* Add space below the title on smaller screens */
+    margin-bottom: 10px; 
   }
 `;
 
@@ -56,8 +56,8 @@ const ButtonContainer = styled.div`
   gap: 10px;
 
   @media (min-width: 300px) and (max-width: 850px) {
-    width: 100%; /* Ensure buttons take full width */
-    justify-content: space-around; /* Space buttons evenly */
+    width: 100%; 
+    justify-content: space-around; 
   }
 `;
 
@@ -73,7 +73,7 @@ const StyledButton = styled.button`
   align-items: center;
 
   @media (min-width: 300px) and (max-width: 850px) {
-    font-size: 18px; /* Slightly reduce font size on smaller screens */
+    font-size: 18px; 
   }
 `;
 

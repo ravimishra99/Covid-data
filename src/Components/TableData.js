@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+
 // Mapping of state codes to state names
 const stateCodeToName = {
   "AN": "Andaman and Nicobar Islands",
@@ -57,15 +58,17 @@ function TableData() {
           const deceased = total?.deceased || 0;
           const active = confirmed - (recovered + deceased);
 
+          const stateName = stateCodeToName[stateCode] || null; // Get the state name or set it to null if not found
+
           return {
-            stateName: stateCodeToName[stateCode],
+            stateName,
             confirmed,
             recovered,
             deceased,
             active,
             population: meta?.population || 'N/A',
           };
-        });
+        }).filter(state => state.stateName); // Filter out entries with null or undefined stateName
 
         setStateData(formattedData);
       } catch (error) {
@@ -104,6 +107,7 @@ function TableData() {
           </tbody>
         </StyledTable>
       </TableContainer>
+     
     </AppContainer>
   );
 }
@@ -120,20 +124,22 @@ const AppContainer = styled.div`
   width: 100%;
   background-color: #161625;
   overflow-x: hidden;
+  margin: 0;
+  padding:0;
 `;
 
 const TableContainer = styled.div`
-  width: 70%; /* Use full width for the table container */
-  overflow-x: auto; /* Enable horizontal scroll only for the table */
-  margin: auto;
+  width: 90%; 
+  overflow-x: hidden; 
+  margin: 0 auto;
   padding-top: 10px;
-  padding-left: 25px;
-  box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-  @media (min-width: 300px) and (max-width: 850px) {
-    /* Your styles here */
-    width: 95%;
-} /* Ensure the table has a minimum width on smaller screens */
   
+  box-sizing: border-box; 
+  @media (min-width: 300px) and (max-width: 950px) {
+   
+    overflow-x: auto;
+    width: 95%;
+  }
 `;
 
 const StyledTable = styled.table`
@@ -141,11 +147,11 @@ const StyledTable = styled.table`
   border: 2px solid white;
   border-radius: 20px;
   background-color: #1e1e30;
-  min-width: 600px; /* Prevent the table from shrinking too much */
-  overflow-x: auto;
+  min-width: 600px; 
 
-  @media (min-width: 300px) and (max-width: 850px) {
-    min-width: 600px; /* Ensure the table has a minimum width on smaller screens */
+
+  @media (min-width: 300px) and (max-width: 950px) {
+    min-width: 600px; 
   }
 `;
 
@@ -185,4 +191,4 @@ const StyledTd = styled.td`
   &:nth-child(7) {
     color: orange;
   }
-`;
+  `;
