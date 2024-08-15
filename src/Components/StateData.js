@@ -117,7 +117,6 @@ const Heading = styled.h1`
     margin-bottom: 15px; 
   }
 `;
-
 const SearchContainer = styled.div`
   margin: 20px auto;
   text-align: center;
@@ -125,11 +124,12 @@ const SearchContainer = styled.div`
 
   @media (min-width: 300px) and (max-width: 850px) {
     margin: 15px auto; 
-     }
+  }
 `;
 
 const SearchInput = styled.input.attrs({ type: 'text', autoComplete: 'off' })`
   width: 30%;
+  max-width: 100%; /* Prevents input from exceeding container width */
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -148,6 +148,7 @@ const SearchInput = styled.input.attrs({ type: 'text', autoComplete: 'off' })`
     width: 50%; 
   }
 `;
+
 
 const SuggestionsList = styled.ul`
   width: 30%;
