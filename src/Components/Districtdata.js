@@ -50,7 +50,7 @@ function DistrictData() {
   useEffect(() => {
     const fetchDistrictData = async () => {
       try {
-        const response = await fetch('https://data.covid19india.org/v4/min/data.min.json');
+        const response = await fetch('https://apis.ccbp.in/covid19-state-wise-data');
         const jsonData = await response.json();
 
         const stateCode = stateNameToCode[stateName];
