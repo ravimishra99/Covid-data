@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 
 const Navigation = () => {
@@ -7,9 +7,9 @@ const Navigation = () => {
         <NavContainer>
             <Title>COVID19 INDIA</Title>
             <ButtonContainer>
-                <StyledButton> <StyledLink to="/">Home</StyledLink> </StyledButton>
-                <StyledButton> <StyledLink to="about">About</StyledLink> </StyledButton>
-                <StyledButton> <StyledLink to="vaccination">Vaccination</StyledLink></StyledButton>
+                <StyledButton> <StyledNavLink  to="/">Home</StyledNavLink> </StyledButton>
+                <StyledButton> <StyledNavLink to="about">About</StyledNavLink> </StyledButton>
+                <StyledButton> <StyledNavLink to="vaccination">Vaccination</StyledNavLink></StyledButton>
             </ButtonContainer>
         </NavContainer>
     )
@@ -79,7 +79,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: inherit;
 

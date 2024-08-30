@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <StateData />
       <TableData />
-     <Footerbar />
+      <Footerbar />
     </div>
   )
 }

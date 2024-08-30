@@ -91,7 +91,7 @@ const TableContainer = styled.div`
   width: 60%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 10px;
   box-sizing: border-box;
 
   @media (min-width: 300px) and (max-width: 950px) {
@@ -107,15 +107,16 @@ const StyledTable = styled.table`
   background-color: #1e1e30;
   min-width: 600px;
 
+
   @media (min-width: 300px) and (max-width: 950px) {
-    min-width: 600px;
+    min-width: 400px;
   }
 `;
 
 const Th = styled.th`
   color: white;
   border: none;
-  padding: 20px;
+  padding: 5px;
   padding-left: 30px;
   text-align: start;
 `;
@@ -130,7 +131,7 @@ const Td = styled.td`
 
   &:first-child {
     color: white;
-    word-break: break-word;
+    word-break: break word;
   }
 
   &:nth-child(2) {
