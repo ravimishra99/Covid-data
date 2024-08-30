@@ -84,7 +84,7 @@ const TopContainer = styled.div`
   background-color: #161625;
   overflow-x: hidden;
   margin: 0;
-  padding: 0;
+  padding-top: 150px;
 `;
 
 const TableContainer = styled.div`
@@ -114,20 +114,23 @@ const StyledTable = styled.table`
 
 const Th = styled.th`
   color: white;
-  /* border: none; */
-  padding: 10px;
-
+  border: none;
+  padding: 20px;
+  padding-left: 30px;
   text-align: start;
 `;
 
 const Td = styled.td`
   border: none;
-  padding-left: 10px;
+  padding-left: 30px;
  
   padding-top: 10px;
+  padding-bottom: 10px;
+
 
   &:first-child {
     color: white;
+    word-break: break-word;
   }
 
   &:nth-child(2) {

@@ -1,16 +1,18 @@
 import React from 'react';
-
+import VaccinationData from '../Components/VaccinationData';
+import Footerbar from '../Components/Footerbar';
 
 
 const Vaccination = () => {
-  return(
-<div>
-   <p>Vaccination data is coming soon...</p>
-</div>
+  return (
+    <div>
+      <VaccinationData />
+      <Footerbar />
+    </div>
 
   );
 
 };
-  export default Vaccination;
+export default Vaccination;
 
-  
+
