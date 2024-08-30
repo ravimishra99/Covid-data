@@ -14,4 +14,4 @@ const Vaccination = () => {
   )
 
 }
-  export default VaccinationData;
+  export default Vaccination;
