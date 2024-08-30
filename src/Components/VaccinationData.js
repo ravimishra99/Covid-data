@@ -39,10 +39,7 @@ const VaccinationData = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Vaccination Information</h1>
-      <p>Here you can find all the information about vaccinations...</p>
-
+  
       <TopContainer>
         <TableContainer>
           <StyledTable>
@@ -71,7 +68,7 @@ const VaccinationData = () => {
           </StyledTable>
         </TableContainer>
       </TopContainer>
-    </div>
+  
   );
 }
 

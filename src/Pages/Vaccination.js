@@ -5,13 +5,14 @@ import Footerbar from '../Components/Footerbar';
 
 const Vaccination = () => {
   return(
-<>
-
+<div>
 <VaccinationData />
 <Footerbar />
-</>
+</div>
 
   )
 
 }
   export default Vaccination;
+
+  
